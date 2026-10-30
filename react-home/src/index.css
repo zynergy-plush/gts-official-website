@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+:root{
+    --bg:#0d0f10;
+    --bg-2:#000;
+    --accent:#1fff01;
+    --text:#ededed;
+}   
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#cgc-react-home {
+    background: #000;
+    background-color: transparent !important;
+}
+

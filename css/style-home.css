@@ -1,0 +1,1407 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   HERO — PIXEL BLAST
+========================================================= */
+
+.home-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    z-index: 1;
+}
+
+.home-hero::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 140px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.25) 35%,
+        rgba(0, 0, 0, 0.65) 75%,
+        #000 100%
+    );
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pixel-blast-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.pixel-blast-background canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.home-hero-content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+.home-hero-content h1 {
+    font-size: clamp(50px, 5.5vw, 100px);
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.typing-cursor {
+    display: inline-block;
+    margin-left: 4px;
+
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+========================================================= */
+
+.btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-box a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 25px;
+
+    border: 2px solid #1fff01;
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn-box a:hover {
+    background: #1fff01;
+    color: #094e15;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTINUOUS PIXEL SNOW AREA
+========================================================= */
+
+.pixel-snow-page {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.pixel-snow-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.pixel-snow-background canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.pixel-snow-page > section {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PIXEL SNOW → GRADIENT WAVES FADE
+========================================================= */
+
+.home-footer {
+    position: relative;
+
+    width: 100%;
+    min-height: 600px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    z-index: 3;
+}
+
+.home-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 160px;
+
+    background: linear-gradient(
+        to bottom,
+        #000 0%,
+        rgba(0, 0, 0, 0.8) 25%,
+        rgba(0, 0, 0, 0.4) 60%,
+        transparent 100%
+    );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRADIENT WAVES
+========================================================= */
+
+.footer-waves {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.home-about {
+    position: relative;
+
+    min-height: 650px;
+
+    padding: 100px 7% 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-about-content {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+}
+
+/* =========================================================
+   INTRO TEXT
+========================================================= */
+
+.about-text {
+    flex: 1;
+
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    margin-bottom: 25px;
+}
+
+.about-buttons {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    position: static;
+}
+
+
+/* =========================================================
+   CIRCULAR SOCIAL BUTTONS
+========================================================= */
+
+.about-icon-btn {
+    width: 45px !important;
+    height: 45px !important;
+
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    font-size: 20px !important;
+}
+
+.learn-more-btn {
+    padding: 11px 22px !important;
+}
+
+
+/* =========================================================
+   CORE MEMBERS
+========================================================= */
+
+.about-buttons-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.about-core-members {
+    width: 390px;
+    max-width: 100%;
+
+    flex-shrink: 0;
+}
+
+.home-core-members-card {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 18px 22px;
+
+    text-decoration: none;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(8px);
+
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CORE MEMBERS CARD HOVER
+========================================================= */
+
+.home-core-members-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #1fff01;
+
+    box-shadow:
+        0 0 20px #88fb78;
+}
+
+
+/* =========================================================
+   CORE MEMBERS ICON
+========================================================= */
+
+.home-core-members-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 26px;
+
+    color: #1fff01;
+
+    flex-shrink: 0;
+}
+
+.home-core-members-icon i {
+    transition: 0.35s ease;
+}
+
+.home-core-members-card:hover .home-core-members-icon i {
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   CORE MEMBERS TEXT
+========================================================= */
+
+.home-core-members-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.home-core-members-text span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #9e9e9e;
+
+    font-size: 15px;
+}
+
+.home-core-members-text strong {
+    font-size: 16.5px;
+    font-weight: 600;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.home-core-members-card:hover
+.home-core-members-text strong {
+    color: #1fff01;
+}
+
+
+/* =========================================================
+   CORE MEMBERS ARROW
+========================================================= */
+
+.home-core-members-arrow {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    flex-shrink: 0;
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.home-core-members-arrow i {
+    font-size: 22px;
+
+    transform: rotate(0deg) scale(1);
+
+    transition: transform 0.35s ease;
+}
+
+
+/* =========================================================
+   CORE MEMBERS ARROW HOVER
+========================================================= */
+
+.home-core-members-card:hover
+.home-core-members-arrow {
+    background: #1fff01;
+
+    box-shadow:
+        0 0 15px rgba(34, 211, 238, 0.35);
+}
+
+.home-core-members-card:hover
+.home-core-members-arrow i {
+    transform: rotate(-45deg) scale(1.15);
+}
+
+
+/* =========================================================
+   TRAILER CARD BUTTON
+========================================================= */
+
+.trailer-card-btn {
+    width: min(800px, 100%);
+
+    margin: 60px auto 0;
+
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    background: transparent;
+
+    backdrop-filter: blur(8px);
+
+    border: 2px solid rgba(18, 192, 201, 0.6);
+
+    border-radius: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.trailer-card-btn:hover {
+    border-color: #1fff01;
+
+    background: rgba(18, 192, 201, 0.12);
+
+    transform: translateY(-3px);
+}
+
+.trailer-card-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #1fff01;
+    color: #000;
+
+    font-size: 22px;
+}
+
+.trailer-card-text {
+    flex: 1;
+}
+
+.trailer-card-text span {
+    display: block;
+
+    color: #1fff01;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 3px;
+}
+
+.trailer-card-text h3 {
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+.trailer-card-text p {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 12px;
+}
+
+.trailer-card-arrow {
+    font-size: 25px;
+
+    color: #1fff01;
+}
+
+
+/* =========================================================
+   TRAILER SECTION
+========================================================= */
+
+.home-trailer {
+    width: 100%;
+
+    padding: 70px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.home-trailer-content {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+.project-rules-text {
+    margin: 0;
+
+    white-space: pre-line;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRIZE POOL
+========================================================= */
+
+.prize-pool-section {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    padding: 80px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prize-pool-container {
+    width: min(700px, 100%);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    border: 2px solid #1fff01;
+    border-radius: 24px;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(31, 255, 1, 0.15);
+
+    box-sizing: border-box;
+}
+
+.prize-pool-heading {
+    margin: 0 0 20px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+
+    color: #ffffff;
+
+    letter-spacing: 2px;
+}
+
+.prize-pool-amount {
+    margin: 0;
+
+    font-size: clamp(3rem, 9vw, 6rem);
+    font-weight: 700;
+
+    color: #1fff01;
+
+    text-shadow:
+        0 0 20px rgba(31, 255, 1, 0.5),
+        0 0 45px rgba(31, 255, 1, 0.25);
+}
+
+@media (max-width: 600px) {
+    .prize-pool-section {
+        padding: 60px 15px;
+    }
+
+    .prize-pool-container {
+        padding: 35px 20px;
+        border-radius: 20px;
+    }
+}
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-container {
+    width: min(900px, 100%);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background: transparent;
+
+    box-sizing: border-box;
+}
+
+.countdown-heading {
+    margin: 0 0 30px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+
+    color: #ffffff;
+
+    letter-spacing: 2px;
+}
+
+.countdown-section {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    padding: 80px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    width: 130px;
+
+    padding: 25px 15px;
+
+    border: 1px solid rgba(31, 255, 1, 0.4);
+    border-radius: 18px;
+
+    background: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+}
+
+.countdown-value {
+    font-size: 3rem;
+    font-weight: 700;
+
+    color: #1fff01;
+
+    text-shadow:
+        0 0 20px rgba(31, 255, 1, 0.45),
+        0 0 40px rgba(31, 255, 1, 0.2);
+}
+
+.countdown-label {
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+    .countdown-section {
+        padding: 60px 15px;
+    }
+
+    .countdown-container {
+        padding: 35px 20px;
+        border-radius: 20px;
+    }
+
+    .countdown-box {
+        width: 100px;
+        padding: 18px 10px;
+    }
+
+    .countdown-value {
+        font-size: 2.2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.trailer-video-wrapper {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    border: 2px solid #1fff01;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #07191d;
+
+    box-sizing: border-box;
+}
+
+.trailer-video-wrapper video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 480px;
+
+    object-fit: contain;
+
+    background: #07191d;
+}
+
+
+/* =========================================================
+   FOOTER CONTENT
+========================================================= */
+
+.home-footer-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1100px;
+
+    min-height: 600px;
+
+    margin: 0 auto;
+
+    padding: 80px 40px 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOOTER HEADING
+========================================================= */
+
+.footer-heading {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 80px;
+}
+
+.footer-heading h2 {
+    margin: 0;
+
+    font-size: 50px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.footer-heading p {
+    margin: 8px 0 0;
+
+    font-size: 1.5rem;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   FOOTER TITLE
+========================================================= */
+
+.home-footer-content h2 {
+    margin: 0;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER TAGLINE
+========================================================= */
+
+.footer-tagline {
+    margin: 10px 0 35px;
+
+    font-size: 1.1rem;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   FOOTER SOCIAL BUTTONS
+========================================================= */
+
+.footer-social-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.footer-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 115px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #1fff01;
+
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.footer-social-btn i {
+    font-size: 19px;
+}
+
+.footer-social-btn:hover {
+    background: #1fff01;
+
+    border-color: #1fff01;
+
+    color: #000000;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   GITHUB EMBED
+========================================================= */
+
+.github-embed {
+    width: min(500px, 90%);
+
+    margin: 0 auto 35px;
+
+    padding: 25px;
+
+    border: 1px solid #1fff01;
+
+    border-radius: 16px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    box-sizing: border-box;
+}
+
+.github-embed-header {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+.github-embed-header > i {
+    font-size: 2.5rem;
+
+    color: #ffffff;
+}
+
+.github-embed-header h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 1.2rem;
+}
+
+.github-embed-header p {
+    margin: 4px 0 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   GITHUB BUTTON
+========================================================= */
+
+.github-embed-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    padding: 10px 20px;
+
+    border: 1px solid #1fff01;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.github-embed-button:hover {
+    background: #1fff01;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM ROW
+========================================================= */
+
+.footer-bottom {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM TEXT
+========================================================= */
+
+.footer-copyright,
+.footer-developed {
+    margin: 0;
+    padding: 0;
+
+    font-size: 16px;
+
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-copyright {
+    text-align: left;
+}
+
+.footer-developed {
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DEVELOPED BY LINK
+========================================================= */
+
+.footer-developed a {
+    color: #1fff01;
+
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.footer-developed a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 850px
+========================================================= */
+
+@media (max-width: 850px) {
+
+    /* ABOUT */
+
+    .home-about-content {
+        flex-direction: column;
+
+        gap: 40px;
+
+        align-items: stretch;
+    }
+
+    .about-text {
+        max-width: 100%;
+
+        text-align: center;
+    }
+
+    .about-buttons {
+        justify-content: center;
+
+        left: 0;
+    }
+
+    .about-core-members {
+        width: min(390px, 100%);
+
+        flex: none;
+
+        margin: 0 auto;
+    }
+
+    .home-core-members-card {
+        min-height: 95px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .home-footer {
+        min-height: 550px;
+    }
+
+    .home-footer-content {
+        min-height: 550px;
+
+        padding: 100px 20px 25px;
+    }
+
+    .footer-heading {
+        margin-top: 50px;
+    }
+
+    .footer-heading h2 {
+        font-size: 2rem;
+    }
+
+    .footer-heading p {
+        font-size: 0.95rem;
+    }
+
+    .footer-social-buttons {
+        margin-top: 25px;
+    }
+
+    /* FOOTER BOTTOM */
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 10px;
+    }
+
+    .footer-copyright,
+    .footer-developed {
+        text-align: center;
+
+        font-size: 14px;
+
+        line-height: 1.4;
+
+        white-space: normal;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .home-hero {
+        min-height: 80vh;
+    }
+
+    .home-hero-content h1 {
+        font-size: 42px;
+    }
+
+
+    /* ABOUT */
+
+    .home-about {
+        padding: 70px 20px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+    }
+
+
+    /* TRAILER CARD */
+
+    .trailer-card-btn {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+    .trailer-card-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+    .trailer-card-text h3 {
+        font-size: 16px;
+    }
+
+    .trailer-card-text p {
+        font-size: 11px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-hero {
+        padding: 70px 15px;
+    }
+
+    .projectsSwiper {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+
+    /* TRAILER */
+
+    .home-trailer {
+        padding: 50px 15px;
+    }
+
+    .home-trailer-content {
+        padding: 18px;
+    }
+
+    .home-trailer-content h2 {
+        font-size: 22px;
+    }
+
+
+    /* GITHUB */
+
+    .github-embed {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .github-embed-button {
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .home-core-members-card {
+        padding: 16px;
+    }
+
+    .home-core-members-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-right: 0;
+
+        font-size: 25px;
+    }
+
+    .home-core-members-text {
+        margin-left: 14px;
+    }
+
+    .home-core-members-text span {
+        font-size: 0.75rem;
+    }
+
+    .home-core-members-text strong {
+        font-size: 1rem;
+    }
+
+    .home-core-members-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .home-core-members-arrow i {
+        font-size: 20px;
+    }
+}
+
+#cgc-react-home {
+    background: #000;
+    background-color: transparent !important;
+}

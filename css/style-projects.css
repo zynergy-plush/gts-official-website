@@ -1,0 +1,365 @@
+/* =========================================================
+   FEATURED PROJECTS
+========================================================= */
+
+.projects-hero {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 0;
+}
+
+.projects-heading {
+    font-size: 3rem;
+    font-weight: 300;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+.projects-carousel {
+    width: 100%;
+    max-width: 1200px;
+
+    position: relative;
+
+    margin: 30px auto 0;
+
+    padding: 0 100px;
+
+    box-sizing: border-box;
+}
+
+.projectsSwiper {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    padding: 20px 0 40px;
+
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.projectsSwiper .swiper-slide {
+    width: 1000px !important;
+    height: 420px !important;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 25px;
+
+    padding: 22px;
+
+    border: 4px solid #1fff01;
+    border-radius: 22px;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+
+    box-sizing: border-box;
+
+    opacity: 1 !important;
+    transform: none !important;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+}
+
+.projectsSwiper .swiper-slide-active {
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(31, 255, 1, 0.25);
+}
+
+/* =========================================================
+   LEFT SIDE — TITLE + DESCRIPTION
+========================================================= */
+
+.project-slide-left {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: left;
+}
+
+.projectTitle {
+    margin: 0;
+
+    font-size: 1.7rem;
+    font-weight: 300;
+
+    color: #fff;
+}
+
+.projectDescription {
+    margin: 0;
+
+    max-width: 100%;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    color: #bcbcbc;
+}
+
+/* =========================================================
+   RIGHT SIDE — SCROLLABLE RULES
+========================================================= */
+
+.project-rules {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    padding: 18px;
+
+    border: 1px solid rgba(31, 255, 1, 0.4);
+    border-radius: 16px;
+
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.project-rules h4 {
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: #1fff01;
+}
+
+.project-rules-content {
+    flex: 1;
+
+    min-height: 0;
+
+    max-height: 180px;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    scrollbar-width: thin;
+    scrollbar-color: #1fff01 transparent;
+}
+
+.project-rules-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-rules-content::-webkit-scrollbar-thumb {
+    background: #1fff01;
+    border-radius: 10px;
+}
+
+.project-rules-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* =========================================================
+   SLIDER ARROWS — OUTSIDE THE CARD
+========================================================= */
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 55px !important;
+    height: 55px !important;
+
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 100;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    transition: 0.3s;
+}
+
+.swiper-button-prev {
+    left: 15px;
+}
+
+.swiper-button-next {
+    right: 15px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 22px !important;
+    line-height: 1 !important;
+    font-weight: 700;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    transform: translateY(-50%) scale(1.08);
+
+    background: #fff;
+    color: #000;
+}
+
+/* =========================================================
+   NO PROJECTS
+========================================================= */
+
+.no-projects {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-projects p {
+    padding: 25px 50px;
+
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    color: #fff;
+    border: 2px solid #1fff01;
+    border-radius: 20px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    text-align: center;
+}
+
+.projects-carousel .swiper-button-prev,
+.projects-carousel .swiper-button-next {
+    color: #1fff01 !important;
+    border: 1px solid #1fff01 !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+}
+
+.projects-carousel .swiper-button-prev::after,
+.projects-carousel .swiper-button-next::after {
+    color: #1fff01 !important;
+}
+
+.projects-carousel .swiper-button-prev:hover,
+.projects-carousel .swiper-button-next:hover {
+    background: #1fff01 !important;
+    color: #000 !important;
+}
+
+.projects-carousel .swiper-button-prev:hover::after,
+.projects-carousel .swiper-button-next:hover::after {
+    color: #000 !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+    .projects-carousel {
+        padding: 0 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .projectsSwiper .swiper-slide {
+        grid-template-columns: 1fr;
+
+        padding: 18px;
+    }
+
+    .project-rules-content {
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-carousel {
+        padding: 0 60px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .swiper-button-prev {
+        left: 5px;
+    }
+
+    .swiper-button-next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-hero {
+        padding: 60px 0;
+    }
+
+    .projects-heading {
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    .projectTitle {
+        font-size: 1.4rem;
+    }
+
+    .projectDescription {
+        font-size: 0.85rem;
+    }
+
+    .project-rules h4 {
+        font-size: 1rem;
+    }
+
+    .project-rules-content {
+        max-height: 130px;
+    }
+}

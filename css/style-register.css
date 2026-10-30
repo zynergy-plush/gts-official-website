@@ -1,0 +1,271 @@
+/* ================= REGISTRATION PAGE ================= */
+
+.registration-page {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    /* Space above the content for the fixed header. */
+    padding: 150px 20px 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+}
+
+.registration-container {
+    width: min(800px, 100%);
+    padding: 40px;
+
+    border: 2px solid #1fff01;
+    border-radius: 24px;
+
+    background: transparent;
+    
+
+    box-shadow: 0 0 30px rgba(31, 255, 1, 0.12);
+}
+
+/* ================= HEADING ================= */
+
+.registration-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.registration-heading h1 {
+    margin: 0 0 12px;
+
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 600;
+    color: var(--text);
+}
+
+.registration-heading p {
+    margin: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ================= FORM LINKS ================= */
+
+.registration-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.registration-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    width: 100%;
+    min-height: 90px;
+    padding: 18px 22px;
+
+    border: 2px solid rgba(31, 255, 1, 0.4);
+    border-radius: 14px;
+
+    background: transparent;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    color: var(--text);
+    text-decoration: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.registration-card:hover,
+.registration-card:focus-visible {
+    border-color: #1fff01;
+    box-shadow: 0 0 20px rgba(31, 255, 1, 0.25);
+    transform: translateY(-3px);
+}
+
+.registration-card:focus-visible {
+    outline: 2px solid #1fff01;
+    outline-offset: 4px;
+}
+
+/* ================= ICON ================= */
+
+.registration-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid rgba(31, 255, 1, 0.4);
+    border-radius: 12px;
+
+    background: transparent;
+    color: #1fff01;
+    font-size: 26px;
+}
+
+.registration-icon i {
+    transition: transform 0.3s ease;
+}
+
+.registration-card:hover .registration-icon i,
+.registration-card:focus-visible .registration-icon i {
+    transform: scale(1.12);
+}
+
+/* ================= LABEL AND ARROW ================= */
+
+.registration-label {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s ease;
+}
+
+.registration-arrow {
+    flex-shrink: 0;
+
+    font-size: 32px;
+    color: #1fff01;
+
+    transition: transform 0.3s ease;
+}
+
+.registration-card:hover .registration-label,
+.registration-card:focus-visible .registration-label {
+    color: #1fff01;
+}
+
+.registration-card:hover .registration-arrow,
+.registration-card:focus-visible .registration-arrow {
+    transform: translateX(5px);
+}
+
+/* ================= BUTTON GLOW ================= */
+
+.registration-card:hover,
+.registration-card:focus-visible {
+    border-color: #1fff01;
+    background: transparent;
+
+    box-shadow:
+        0 0 25px rgba(31, 255, 1, 0.5),
+        0 0 40px rgba(31, 255, 1, 0.3),
+        0 0 60px rgba(31, 255, 1, 0.15);
+
+    transform: translateY(-3px);
+}
+
+/* ================= ARROW ROTATION ================= */
+
+.registration-arrow {
+    display: inline-block;
+    transform: rotate(0deg);
+
+    transition:
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.registration-card:hover .registration-arrow,
+.registration-card:focus-visible .registration-arrow {
+    transform: rotate(-45deg);
+
+    text-shadow:
+        0 0 20px #1fff01,
+        0 0 50px rgba(31, 255, 1, 0.6);
+}
+
+/* Keep the final arrow direction without animated movement. */
+
+@media (prefers-reduced-motion: reduce) {
+    .registration-arrow {
+        transition: none;
+    }
+
+    .registration-card:hover,
+    .registration-card:focus-visible {
+        transform: none;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+    .registration-page {
+        padding: 150px 15px 50px;
+    }
+
+    .registration-container {
+        padding: 28px 18px;
+        border-radius: 18px;
+    }
+
+    .registration-heading {
+        margin-bottom: 24px;
+    }
+
+    .registration-links {
+        gap: 14px;
+    }
+
+    .registration-card {
+        min-height: 82px;
+        padding: 15px 12px;
+        gap: 12px;
+    }
+
+    .registration-icon {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 10px;
+        font-size: 22px;
+    }
+
+    .registration-label {
+        font-size: 14px;
+    }
+
+    .registration-arrow {
+        font-size: 23px;
+    }
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .registration-card,
+    .registration-icon i,
+    .registration-label,
+    .registration-arrow {
+        transition: none;
+    }
+
+    .registration-card:hover,
+    .registration-card:focus-visible,
+    .registration-card:hover .registration-icon i,
+    .registration-card:focus-visible .registration-icon i,
+    .registration-card:hover .registration-arrow,
+    .registration-card:focus-visible .registration-arrow {
+        transform: none;
+    }
+}
